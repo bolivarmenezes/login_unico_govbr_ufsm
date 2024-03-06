@@ -1,0 +1,194 @@
+{% load static %} {% block content%}
+<!DOCTYPE html> {% load static %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIFI</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}" />
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/cisco_controller.css' %}" rel="stylesheet">
+    <link href="{% static 'css/rawline.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+</head>
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .titulo {
+        font-size: 1.3em;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+
+    .termos {
+        padding-top: 2em;
+        width: 90%;
+        height: auto;
+        font-size: 1.3em;
+        justify-content: justify;
+    }
+
+    .concordar-rejeitar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        padding-top: 0;
+        padding-bottom: 3em;
+    }
+
+    .concordar-rejeitar a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        font-weight: bolder;
+        font-size: 1.3em;
+        width: 10em;
+        height: 2em;
+        border-radius: 3px;
+    }
+
+    #aceitar_termos {
+        background-color: #0d6efd;
+    }
+
+    .concordar-rejeitar a:last-child {
+        background-color: #800d0d;
+    }
+
+    .concordar-rejeitar a:hover {
+        font-size: 1.35em;
+    }
+
+    .carregando {
+        width: 80%;
+        height: 20em;
+        background-color: rgba(255, 255, 255, 0.767);
+        position: absolute;
+        margin: 2em;
+        padding: 2em;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .spinner-border {
+        width: 10em;
+        height: 10em;
+        ;
+    }
+
+    @media screen and (max-width: 768px) {
+        .titulo {
+            font-size: 1.2em;
+            margin-bottom: 0em;
+            margin-top: 1em;
+        }
+
+        .container {
+            min-width: 20em;
+        }
+
+        .termos {
+            width: 100%;
+            font-size: 1em;
+            padding-bottom: 0.5em;
+            min-width: 15em;
+        }
+
+        .concordar-rejeitar {
+            padding-top: 0em;
+        }
+
+        .concordar-rejeitar a {
+            width: 8em;
+            height: 2em;
+            font-size: 1em;
+        }
+
+        .carregando {
+            width: 95%;
+            height: 95%;
+        }
+
+    }
+</style>
+
+<script>
+    function submitAction() {
+        //Caso os termos já tenham sido aceitos, passa direto por essa página
+        document.forms[0].submit();
+    }    
+</script>
+
+
+{% if termos == True %}
+
+<body onload="submitAction();">
+    {% else %}
+
+    {% endif %}
+
+    <div class="container">
+        <div class="titulo">
+            Termo de Uso, Privacidade e Segurança da Internet na INSTITUIÇÃO
+        </div>
+        <div class="termos">
+            <p>Ao realizar a conexão nesta rede Wi-Fi você concorda com:
+                <br>
+                <br>
+            <p>1) o armazenamento dos seguintes dados: CPF, nome, e-mail, telefone, endereço MAC do dispositivo que
+                está
+                acessando (smartphone, notebook, tablet, etc), data e
+                hora do acesso à rede e endereço IP atribuído ao dispositivo durante o tempo de sessão, de acordo
+                com o
+                descrito no Art. 13.
+                do Marco Civil de Internet Lei Nº 12.965, de 23 de abril de 2014;</p>
+            <p>2) as diretrizes estabelecidas no Regulamento da Política de Segurança da Informação e
+                Comunicações – PoSIC (Disponível em:
+                <a href="#">LINK PARA O SITE</a>);
+            </p>
+            <hr>
+            <br>
+        </div>
+        <div class="concordar-rejeitar">
+            <form type="get" id="concordou" action="{{ controladora }}">
+                <a href="{{ controladora }}" id="aceitar_termos">Concordar</a>
+
+                <input type="hidden" name="ja_aceitou" value="1">
+                {% csrf_token %}
+            </form>
+            <a href="{{ logout }}" id="rejeitar_termos">Discordar</a>
+        </div>
+        <div class="carregando" style="display:none;">
+            <div class="spinner-border" role="status">
+            </div>
+        </div>
+    </div>
+
+
+
+    {% endblock %} {% block jquery %}
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    {% endblock jquery %}
+</body>
+
+</html>

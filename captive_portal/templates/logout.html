@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% load static %} {% block content%}
+<style>
+    #r2 {
+        width: 100%;
+        padding-top: 2em;
+        font-size: 1.5em;
+        height: auto;
+    }
+
+    @media screen and (max-width: 800px) {
+        #r2 {
+            margin: 10px;
+            padding: 10px;
+            font-size: 1.1em;
+            margin-top: 1em;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row" id="r1">
+            <img id="brasao" src="{% static '/img/brasao.svg' %}">
+        </div>
+        <div class="row" id="r2">
+            {{ message_logout }}
+        </div>
+    </div>
+</body>
+
+{% endblock %}

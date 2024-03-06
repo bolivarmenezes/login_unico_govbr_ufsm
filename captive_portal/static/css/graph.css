@@ -1,0 +1,227 @@
+.container-fluid {
+    background-color: rgba(0, 0, 0, 0.050);
+}
+
+header .change_date {
+    padding-top: 0;
+    padding-bottom: 0.3em;
+    width: 100%;
+}
+
+header .dropdown .btn {
+    width: 100%;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .mounth-year {
+    text-align: right;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0;
+    top: -10px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+header .row {
+    height: 100%;
+    gap: 0.5em;
+    padding: 0;
+    margin: 0;
+    padding-top: 0.3em;
+}
+
+header .col-3 {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+header .card {
+    width: 100%;
+    height: 3.5em;
+    border: 0;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+}
+
+header .card-body {
+    display: flex;
+    justify-content: space-between;
+    height: 3em;
+}
+
+header .card-text {
+    width: auto;
+    margin-right: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: rgb(189, 73, 6);
+}
+
+header .card-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    font-weight: 600;
+    align-items: center;
+    height: 100%;
+    color: darkblue;
+}
+
+main {
+    margin-top: 0.5em;
+}
+
+main .row {
+    margin: 0;
+    padding: 0;
+    gap: 0.5em;
+}
+
+main .col-20 {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+main .card {
+    width: 100%;
+    height: 33em;
+    border: 0;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+}
+
+main #graphMounth {
+    width: 100%;
+    height: 10em
+}
+
+.title-graph {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    margin-top: 0.3em;
+    margin-bottom: -0.1em;
+}
+
+/*quando chegar a 750px*/
+@media (min-width: 750px) {
+    header {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    header .mounth-year {
+        width: 100%;
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 600;
+        margin: 0;
+        margin-top: 0.5em;
+        padding-right: -10em;
+    }
+
+    header .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: unset;
+    }
+
+    header .col-3 {
+        width: unset;
+    }
+
+    header .card {
+        min-width: 180px;
+        height: 6em;
+    }
+
+    header .card-body {
+        display: unset;
+    }
+
+    header .card-title {
+        font-size: 1.5em;
+        align-items: unset;
+        height: unset;
+    }
+
+    header .card-text {
+        width: 100%;
+        margin-right: 1em;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1em;
+    }
+
+    header .change_date {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    header .dropdown .btn {
+        width: 13em;
+        margin-right: 1em;
+        margin-top: 0.5em;
+        height: 2.8em;
+    }
+
+    main .row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    main .col-20 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    main .card {
+        width: 98%;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (min-width: 850px) {
+    header .card {
+        min-width: 200px;
+    }
+}
+
+@media (min-width: 1080px) {
+    header .card {
+        min-width: 250px;
+    }
+}
+
+@media (min-width: 1150px) {
+    header .card {
+        min-width: 275px;
+    }
+}
+
+@media (min-width: 1250px) {
+    header .card {
+        min-width: 23vw;
+    }
+}

@@ -1,0 +1,62 @@
+.pagin-area {
+    width: 100vw;
+    display: flex;
+    justify-content: start;
+    overflow-x: auto;
+    height: 3.5em;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.number-of-register {
+    width: 100vw;
+    height: 2em;
+    margin: 0;
+    font-size: 1.3em;
+}
+
+tbody tr:hover {
+    background: #1351b491;
+    color: white;
+}
+
+.container {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 0.8em;
+}
+
+.row {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.panel {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+table {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.panel-body {
+    width: 100%;
+}
+
+.panel-heading {
+    width: 100%;
+}
+
+.panel-title {
+    width: 100%;
+}
+
+.row-pagin {
+    background-color: yellow;
+}

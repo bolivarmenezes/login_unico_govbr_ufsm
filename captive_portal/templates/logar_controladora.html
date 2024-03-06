@@ -1,0 +1,24 @@
+{% load static %} {% block content%}
+<script>
+    function submitAction() {
+        //submeter formulario        
+        document.forms[0].submit();
+    }  
+</script>
+
+<body onload="submitAction();">
+
+    <form id="form1" method="post" action="{{ url_action }}">
+        <input id="buttonClicked" name="buttonClicked" size="16" maxlength="15" value="0" type="hidden">
+        <input id="redirect_url" name="redirect_url" size="255" maxlength="255" value="" type="hidden">
+        <input id="err_flag" name="err_flag" size="16" maxlength="15" value="0" type="hidden">
+        <input id="username" name="username" value="{{ user_gov }}" class="input-large" type="hidden">
+        <input id="password" name="password" value="{{ password_gov }}" class="input-large" type="hidden">
+        {% csrf_token %}
+    </form>
+
+    {% endblock %} {% block jquery %}
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    {% endblock jquery %}

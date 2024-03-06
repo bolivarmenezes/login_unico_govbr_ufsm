@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <title>Web Authentication</title>
+    <script>
+
+        function submitAction() {
+            document.forms[0].submit();
+        }        
+    </script>
+</head>
+
+<body onload="submitAction();">
+    <form method="post" action="{{ url_action }}">
+        <input type="hidden" name="buttonClicked" value="4">
+        <input type="hidden" name="redirect_url" value="">
+        <input type="hidden" name="err_flag" value="0">
+        <input type="hidden" name="username" value="{{ user_gov }}">
+        <input type="hidden" value="{{ password_gov }}" name="password">
+        {% csrf_token %}
+    </form>
+</body>
+
+</html>

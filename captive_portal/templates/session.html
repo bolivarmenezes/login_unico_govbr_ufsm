@@ -1,0 +1,113 @@
+{% extends 'base.html' %} {% load static %} {% block content%}
+<style>
+    #r2 {
+        width: 100%;
+        padding-top: 2em;
+        font-size: 1.5em;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #r2 .session-infos {
+        width: 30em;
+        font-size: 1em;
+        border: solid 0.3px #1351b469;
+        padding: 1em;
+    }
+
+    .session-infos .session-infos-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #0f3f8b;
+        justify-content: center;
+        display: flex;
+    }
+
+    #r2 .session-logout {
+        width: 30em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 0.5em;
+    }
+
+    #r2 .session-logout a {
+        align-items: center;
+        padding: 0.3em 0.7em 0.3em 0.7em;
+        font-weight: bold;
+        background-color: #0f3f8b;
+        border-radius: 4px;
+        color: white;
+    }
+
+    #r2 .session-logout a:hover {
+        background-color: rgb(145, 3, 3);
+    }
+
+    @media screen and (max-width: 800px) {
+        #r1 img {
+            margin-top: 0.5em;
+        }
+
+        #r2 {
+            align-content: center;
+            display: flex;
+            flex-direction: column;
+            padding-top: 0;
+
+        }
+
+        #r2 .session-infos {
+            width: 100%;
+            font-size: 1em;
+            margin-bottom: 0.5em;
+            text-align: center;
+        }
+
+        #r2 .session-logout {
+            margin-top: 0em;
+        }
+
+        #r2 .session-logout a {
+            margin-top: 0em;
+            margin-bottom: 1em;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row" id="r1">
+            <img id="brasao" src="{% static '/img/brasao.svg' %}">
+        </div>
+        <div class="row" id="r2">
+            <div class="session-infos">
+                <div class="session-infos-title">
+                    {{ title }}<br><br>
+                </div>
+                {% if test == 1 %}
+                Nome: {{ name }}<br>
+                IP: {{ ip }}<br>
+                MAC: {{ client_mac }}<br>
+                Início da Sessão: {{ login_wifi }}<br>
+                Timeout da Sessão: {{ logout_wifi }}<br>
+                CPF: {{ cpf }}<br>
+                E-mail: {{ email }}<br>
+                Telefone: {{ phone_number }}<br>
+                {% endif %}
+
+            </div>
+            <div class="session-logout">
+                {% if test == 1 %}
+                <a href="{{ logout }}">Efetuar Logout Gov.br</a>
+                {% else %}
+                <a href="{{ ir_site }}">Ok</a>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
