@@ -73,15 +73,17 @@ LOGOUT_REDIRECT_URL = 'login'
 ### tempo de sessão
 PASSWORD_RESET_TIMEOUT_DAYS = '1'
 
+------------
+
 ## Configuração dos Arquivos de rotas 
 
 Por questão de organização, foi criar um arquivo de rotas “url.py”, dentro da aplicação “captive_portal”. 
 
 ### Dessa forma, ficaram dois arquivos de rotas:
-
-**captive_portal/urls.py** #indica o caminho do outro arquivo de rotas (url.py) e dos arquivos estáticos
-**login_unico/urls.py **#define as rotas utilizadas na aplicação
-
+```shell
+captive_portal/urls.py #indica o caminho do outro arquivo de rotas (url.py) e dos arquivos estáticos
+login_unico/urls.py #define as rotas utilizadas na aplicação
+```
 
 ------------
 ### DIRETÓRIO DE CONFIGURAÇÕES
