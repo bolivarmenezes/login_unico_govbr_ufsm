@@ -3,8 +3,11 @@
 ## Python3 + Django para captive portal externo e controladora Cisco.
 Nesse exemplo foi criado um projeto Django com nome “login_unico” e uma aplicação com nome de “captive_portal”.
 
-
 OBS: essa é versão modificado da aplicação implantada na UFSM, para auxiliar a quem interessar utilizar. Para realizar o deploy é importante observar os requisitos de segurança necessários, tanto para o Django como para a máquina que irá hospedá-lo. Lembrando de atender os requisitos do roteiro de integração do [login único gov.br][1].
+
+### Crie um ambiente virtual python 
+#### Instale as bibliotecas informadas no requirements.txt
+
 
 ### DJANGO
 ```shell
@@ -31,7 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    **'captive_portal',**
+    'captive_portal',
 ]
 ```
 
@@ -87,8 +90,9 @@ login_unico/urls.py #define as rotas utilizadas na aplicação
 
 ------------
 ### DIRETÓRIO DE CONFIGURAÇÕES
+#### substituir as configurações dos arquivos abaixo:
 ```shell
-/configs ** \#substituir as configurações desse arquivo, por as apropriadas
+/configs
 /configs/keys/private.pem
 /configs/keys/private.pem
 /configs/keys/public.pem
@@ -100,23 +104,15 @@ login_unico/urls.py #define as rotas utilizadas na aplicação
 ### É necessário liberar essas URLs na controladora para que o usuário possa acessar alguns serviços externos, necessário para autenticação
 #### Sem essa liberação, autenticações externas não funcionam
 ```shell
-    *.gov.br
-    *.1e100.net
-    *.hcaptcha.com
-    cdn.globalsigncdn.*
-    *googletagmanager.com
-    stats.g.doubleclick.net
-    www.google-analytics.com*
-    windowsupdatebg*
+*.gov.br
+*.1e100.net
+*.hcaptcha.com
+cdn.globalsigncdn.*
+*googletagmanager.com
+stats.g.doubleclick.net
+www.google-analytics.com*
+windowsupdatebg*
 ```
 ------------
-
-
-
-
-
-
-
-
 
 [1]: https://manual-roteiro-integracao-login-unico.servicos.gov.br/pt/stable/index.html "login único gov.br"
