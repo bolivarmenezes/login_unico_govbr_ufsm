@@ -23,6 +23,7 @@ python3 manage.py createsuperuser
 ### CONFIGURAÇÕES DO ARQUIVO /login_unico/settings.py 
 
 ### Adição da aplicação “captive_portal”
+```shell
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -32,10 +33,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     **'captive_portal',**
 ]
+```
 
 ### configuração da base de dados (nesse caso, utilizado o postgreSQL)
 
-
+```shell
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -46,16 +48,19 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+```
 
 ### configurando o django para português do Brasil
+```shell
 LANGUAGE_CODE = 'pt-br'
 TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+```
 
 ### configura arquivos estaticos
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 ### configurando o arquivo de media, caso quei fazer upload de arquivos
 MEDIA_URL = '/media/'
@@ -80,16 +85,19 @@ Por questão de organização, foi criar um arquivo de rotas “url.py”, dentr
 
 ------------
 ### DIRETÓRIO DE CONFIGURAÇÕES
-** /configs ** \#substituir as configurações desse arquivo, por as apropriadas
-** /configs/keys/private.pem
+```shell
+/configs ** \#substituir as configurações desse arquivo, por as apropriadas
+/configs/keys/private.pem
 /configs/keys/private.pem
 /configs/keys/public.pem
-/configs/configs.py **
+/configs/configs.py
+```
 ------------
 
 
 ### É necessário liberar essas URLs na controladora para que o usuário possa acessar alguns serviços externos, necessário para autenticação
-**Sem essa liberação, autenticações externas não funcionam**
+#### Sem essa liberação, autenticações externas não funcionam
+```shell
     *.gov.br
     *.1e100.net
     *.hcaptcha.com
@@ -98,7 +106,8 @@ Por questão de organização, foi criar um arquivo de rotas “url.py”, dentr
     stats.g.doubleclick.net
     www.google-analytics.com*
     windowsupdatebg*
-
+```
+------------
 
 
 
