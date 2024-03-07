@@ -47,7 +47,7 @@ DATABASES = {
     }
 }
 
-###connfigurando o django para português do Brasil
+### configurando o django para português do Brasil
 LANGUAGE_CODE = 'pt-br'
 TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
@@ -80,11 +80,11 @@ Por questão de organização, foi criar um arquivo de rotas “url.py”, dentr
 
 ------------
 ### DIRETÓRIO DE CONFIGURAÇÕES
-**/configs **#substituir as configurações desse arquivo, por as apropriadas
-**/configs/keys/private.pem
+** /configs ** \#substituir as configurações desse arquivo, por as apropriadas
+** /configs/keys/private.pem
 /configs/keys/private.pem
 /configs/keys/public.pem
-/configs/configs.py**
+/configs/configs.py **
 ------------
 
 
