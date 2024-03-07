@@ -7,7 +7,7 @@ Nesse exemplo foi criado um projeto Django com nome “login_unico” e uma apli
 
 OBS: essa é versão modificado da aplicação implantada na UFSM, para auxiliar a quem interessar utilizar. Para realizar o deploy é importante observar os requisitos de segurança necessários, tanto para o Django como para a máquina que irá hospedá-lo. Lembrando de atender os requisitos do roteiro de integração do [login único gov.br][1].
 
-#### DJANGO
+### DJANGO
 ```shell
 django-admin startproject login_unico .
 django-admin startapp captive_portal
