@@ -77,6 +77,10 @@ LOGOUT_REDIRECT_URL = 'login'
 PASSWORD_RESET_TIMEOUT_DAYS = '1'
 
 ------------
+## Arquivo Views
+### A parte principal da lógica (com comentários) da implatanção está no arquivo views
+#### captive_portal/views.py
+------------
 
 ## Configuração dos Arquivos de rotas 
 
