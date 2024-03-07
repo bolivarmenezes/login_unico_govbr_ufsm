@@ -99,10 +99,11 @@ login_unico/urls.py #define as rotas utilizadas na aplicação
 /configs/configs.py
 ```
 ------------
+# Controladora WiFi (Cisco)
+Para que o usuário realize o login em um site externo (login único gov.br) é necessário que haja uma liberação prévia de alguns endereços. A forma com que os endereços são liberados depende de qual controladora WiFi e qual versão está sendo utilizada. No caso da UFSM, são utilizadas duas controladoras WiFi Cisco, com diferentes versões cada. Na mais antiga, as liberações foram feitas via ACL e na mais nova, via URL Filter. 
 
-
-### É necessário liberar essas URLs na controladora para que o usuário possa acessar alguns serviços externos, necessário para autenticação
-#### Sem essa liberação, autenticações externas não funcionam
+### É necessário liberar essas URLs na CONTROLADORA WIFI para que o usuário possa acessar alguns serviços externos, utilizados na autenticação
+#### Sem essa liberação, a autenticação externa não funcionará.
 ```shell
 *.gov.br
 *.1e100.net
