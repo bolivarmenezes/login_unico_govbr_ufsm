@@ -14,14 +14,14 @@ django-admin startapp captive_portal
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
-#### Criar um superuser para acessar a área administrativa da interface Django
+### Criar um superuser para acessar a área administrativa da interface Django
 ```shell
 python3 manage.py createsuperuser
 #entrar com as informações solicitadas
 ```
 
 
-####CONFIGURAÇÕES DO ARQUIVO /login_unico/settings.py 
+###CONFIGURAÇÕES DO ARQUIVO /login_unico/settings.py 
 
 ### Adição da aplicação “captive_portal”
 INSTALLED_APPS = [
@@ -55,7 +55,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-#####configura arquivos estaticos
+###configura arquivos estaticos
 STATIC_URL = 'static/'
 
 ###configurando o arquivo de media, caso quei fazer upload de arquivos
